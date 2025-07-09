@@ -1,14 +1,22 @@
-import logoDeClima from './assets/images/logo-de-clima.png' 
-import './App.css'
+import WeatherInfo from './components/WeatherInfo'
+import WeatherForm from './components/WeatherForm'
 
 function App() {
-  return (
-    <>
-    <p>Olá Previsão do clima</p>
-          <img src={logoDeClima} className="logo-clima" alt="Logo de clima" />
-        
-    </>
-  )
+    const weatherData = {
+      name: "Rio de Janeiro",
+      main: { temp: 27.6 },
+      weather: [{
+        description: "Ensolarado",
+        icon: "01d"
+      }]
+    }
+
+return (
+  <div>
+    <WeatherInfo weather={weatherData} />
+    <WeatherForm/>
+  </div>  
+)
 }
 
 export default App
