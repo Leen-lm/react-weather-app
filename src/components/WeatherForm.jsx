@@ -12,7 +12,7 @@ export default function WeatherForm({ onSearch }){
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="text-center" onSubmit={handleSubmit}>
             <input 
                 type="text"
                 placeholder="Digite a sua cidade: "
