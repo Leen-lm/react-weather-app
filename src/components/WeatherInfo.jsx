@@ -4,9 +4,9 @@ import logoDeClima from '../assets/images/logo-de-clima.png'
 export default function WeatherInfo({ weather }) {
     if (!weather) return null;
 
-    const temperatura = parseFloat(weather.main.te)
+    const temperatura = weather.main.temp;
 
-    const temperaturaFormatada = numeral(temperatura / 10).format('00,0')
+    const temperaturaFormatada = numeral(temperatura - 273.15).format('0.00')
 
     return(
         <div className="text-center ">
