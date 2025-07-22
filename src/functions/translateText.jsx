@@ -8,5 +8,5 @@ export default async function TranslateText(text, sourceLanguage, targetLanguage
       return await traducao;
     } catch (error){
         console.error('Erro na tradução:', error)};
-        return text;
-}
+        return text
+};
