@@ -24,12 +24,12 @@ export default function WeatherInfo({ weather }) {
     const temperaturaFormatada = numeral(temperatura - 273.15).format('0.00')
 
     return (
-        <div className="text-center ">
+        <div className="gap-1.5 text-center flex flex-col items-center">
             <h2 className="text-blue-800 text-3xl mb-1.5">{weather.name}</h2>
             <p>Temperatura: {temperaturaFormatada}°C</p>
             <p className='capitalize'>Condição: {condicaoClimaTraduzida || condicaoClima}</p>
 
-            <img className='w-2xs center' src={logoDeClima} alt="Weather Icon" />
+            <img className='w-2xs' src={logoDeClima} alt="Weather Icon" />
         </div>
     )
 }
