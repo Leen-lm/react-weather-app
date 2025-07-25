@@ -26,8 +26,8 @@ function App() {
   };
 
   return (
-    <main className='w-screen h-screen flex justify-center items-center p-4'>
-      <div>
+    <main className='bg-blue-200 w-screen h-screen flex justify-center items-center p-4'>
+      <div className='bg-amber-500 w-130 h-105 rounded-3xl'>
         <h1 className='text-2xl font-bold mb-4 text-center'>Previsão do Tempo</h1>
         <WeatherInfo weather={weather} />
         <WeatherForm onSearch={fetchWeather} />
