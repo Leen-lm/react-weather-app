@@ -1,26 +1,26 @@
 import { useState, useEffect } from 'react';
 import numeral from 'numeral';
-import logoDeClima from '../assets/images/logo-de-clima.png'
-import TranslateText from '../functions/translateText';
+import logoDeClima from '../../assets/images/logo-de-clima.png';
+import TranslateText from '../../functions/translateText';
 
 export default function WeatherInfo({ weather }) {
     const [condicaoClimaTraduzida, setCondicaoClimaTraduzida] = useState('');
 
+    const condicaoClima = weather?.weather?.[0]?.description || '';
+
     useEffect(() => {
-        if (weather) {
-            const condicaoClima = weather.weather[0].description;
+        if (condicaoClima) {
             const traduzir = async () => {
                 const traduzida = await TranslateText(condicaoClima, 'en', 'pt');
                 setCondicaoClimaTraduzida(traduzida);
             };
             traduzir();
         }
-    }, [weather]);
+    }, [condicaoClima]);
 
     if (!weather) return null;
 
     const temperatura = weather.main.temp;
-    const condicaoClima = weather.weather[0].description
     const temperaturaFormatada = numeral(temperatura - 273.15).format('0.00')
 
     return (
