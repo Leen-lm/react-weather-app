@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import WeatherInfo from './components/WeatherInfo'
-import WeatherForm from './components/WeatherForm'
+import WeatherInfo from './components/Weather/WeatherInfo'
+import WeatherForm from './components/Weather/WeatherForm'
+import TituloPagina from './components/TitlePage';
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -16,7 +17,6 @@ function App() {
       }
 
       const data = await res.json();
-      console.log(data);
       setWeather(data);
 
     } catch (error) {
@@ -26,9 +26,9 @@ function App() {
   };
 
   return (
-    <main className='bg-blue-200 w-screen h-screen flex justify-center items-center p-4'>
-      <div className='bg-amber-500 w-130 h-105 rounded-3xl'>
-        <h1 className='text-2xl font-bold mb-4 text-center'>Previsão do Tempo</h1>
+    <main className='bg-blue-400 w-screen h-screen flex justify-center items-center p-4'>
+      <div className='flex-col border-4 bg-yellow-400 w-170 h-130 rounded-3xl'>
+        <TituloPagina />
         <WeatherInfo weather={weather} />
         <WeatherForm onSearch={fetchWeather} />
       </div>
