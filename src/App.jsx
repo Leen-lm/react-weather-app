@@ -9,7 +9,7 @@ function App() {
 
   const fetchWeather = async (city) => {
     try {
-      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
+      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
       );
 
       if (!res.ok) {
@@ -29,8 +29,8 @@ function App() {
     <main className='bg-blue-400 w-screen h-screen flex justify-center items-center p-4'>
       <div className='flex-col border-4 bg-yellow-400 w-170 h-130 rounded-3xl'>
         <TituloPagina />
-        <WeatherInfo weather={weather} />
-        <WeatherForm onSearch={fetchWeather} />
+        {weather && <WeatherInfo weather={weather} />}
+        <WeatherForm onSearch={fetchWeather} hasWeatherData={!!weather} />
       </div>
     </main>
   )
