@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import numeral from 'numeral';
 import logoDeClima from '../../assets/images/logo-de-clima.png';
 import TranslateText from '../../functions/translateText';
 
@@ -21,17 +20,15 @@ export default function WeatherInfo({ weather }) {
     if (!weather) return null;
 
     const temperatura = weather.main.temp;
-    const temperaturaFormatada = numeral(temperatura - 273.15).format('0.00')
 
     return (
         <div className="gap-1.5 text-center flex flex-col items-center">
             <h2 className="text-blue-800 text-3xl mb-1.5">{weather.name}</h2>
-            <p>Temperatura: {temperaturaFormatada}°C</p>
+            <p>Temperatura: {temperatura}°C</p>
             <p className='capitalize'>Condição: {condicaoClimaTraduzida || condicaoClima}</p>
 
-            <img className='w-2xs' src={logoDeClima} alt="Weather Icon" />
+            <img className='mt-5 mb-7 w-2xs' src={logoDeClima} alt="Weather Icon" />
         </div>
     )
 }
-
 
