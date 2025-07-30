@@ -23,7 +23,7 @@ export default function WeatherInfo({ weather }) {
 
     return (
         <div className="gap-1.5 text-center flex flex-col items-center">
-            <h2 className="text-blue-800 text-3xl mb-1.5">{weather.name}</h2>
+            <h2 className="text-blue-800 text-[45px] mb-1">{weather.name}</h2>
             <p>Temperatura: {temperatura}°C</p>
             <p className='capitalize'>Condição: {condicaoClimaTraduzida || condicaoClima}</p>
 
