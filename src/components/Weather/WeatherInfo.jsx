@@ -7,6 +7,12 @@ export default function WeatherInfo({ weather }) {
 
     const condicaoClima = weather?.weather?.[0]?.description || '';
 
+    // const codigoIcone = weather?.weather?.[0]?.icon;
+    // const iconeUrl = `´https://openweathermap.org/img/wn/${codigoIcone}@2x.png`;
+    // console.log(codigoIcone);
+    
+
+
     useEffect(() => {
         if (condicaoClima) {
             const traduzir = async () => {
@@ -22,12 +28,18 @@ export default function WeatherInfo({ weather }) {
     const temperatura = weather.main.temp;
 
     return (
-        <div className="gap-1.5 text-center flex flex-col items-center">
+        <div className="text-center flex flex-col items-center">
             <h2 className="text-blue-800 text-[45px] mb-1">{weather.name}</h2>
-            <p>Temperatura: {temperatura}°C</p>
-            <p className='capitalize'>Condição: {condicaoClimaTraduzida || condicaoClima}</p>
+            <p className='text-[20px]'>Temperatura: {temperatura}°C</p>
+            <p className='capitalize text-[20px]'>Condição: {condicaoClimaTraduzida || condicaoClima}</p>
 
-            <img className='mt-5 mb-7 w-2xs' src={logoDeClima} alt="Weather Icon" />
+            {weather.weather && weather.weather[0]?.icon && (
+                <img
+                    src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                    alt="Ícone do clima"
+                    className="mt-5 mb-7 w-2xs"
+                />
+            )}
         </div>
     )
 }
