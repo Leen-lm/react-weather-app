@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import logoDeClima from '../../assets/images/logo-de-clima.png';
 import TranslateText from '../../functions/translateText';
 
 export default function WeatherInfo({ weather }) {
