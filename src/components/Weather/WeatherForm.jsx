@@ -15,7 +15,7 @@ export default function WeatherForm({ onSearch, hasWeatherData}) {
     };
 
     return (
-        <form className={`text-center ${!hasWeatherData?  'h-[70%]': 'h-auto'} content-center`} onSubmit={handleSubmit}>
+        <form className={`text-center ${!hasWeatherData ? 'h-[70%]' : 'h-auto'} content-center`} onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="Digite a sua cidade: "
@@ -23,7 +23,7 @@ export default function WeatherForm({ onSearch, hasWeatherData}) {
                 onChange={(e) => setCity(e.target.value)}
                 className="p-2 border rounded"
             />
-            <button type="submit">
+            <button className="bg-blue-600 w-[100px] h-[40px] rounded-3xl text-blue-50 hover:bg-blue-400 hover:text-black" type="submit">
                 Buscar
             </button>
         </form>
