@@ -28,7 +28,7 @@ export default function WeatherInfo({ weather }) {
 
     return (
         <div className="text-center flex flex-col items-center">
-            <h2 className=" text-blue-800 text-[45px] mb-1">{weather.name}</h2>
+            <h2 className=" text-blue-800 text-[35px] mb-1 sm:text-[45px]">{weather.name}</h2>
             <p className='text-[20px]'>Temperatura: {temperatura}°C</p>
             <p className='capitalize text-[20px]'>Condição: {condicaoClimaTraduzida || condicaoClima}</p>
 
@@ -36,7 +36,7 @@ export default function WeatherInfo({ weather }) {
                 <img
                     src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
                     alt="Ícone do clima"
-                    className="shadow-2xl bg-amber-400 rounded-3xl mt-4 mb-6 w-[130px]"
+                    className="shadow-2xl bg-amber-400 rounded-3xl mt-4 mb-2 w-[130px] sm:mb-8"
                 />
             )}
         </div>
