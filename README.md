@@ -20,8 +20,8 @@ Aplicação simples em React que permite ao usuário buscar o clima atual de uma
 
 ## 📸 Screenshots
 
-![Tela Principal](https://leen-lm.github.io/react-weather-app/images/weather-home.png)
-![Tela com resultado](https://leen-lm.github.io/react-weather-app/images/weather-result.png)
+![Tela Principal](public/images/weather-home.png)
+![Tela com resultado](public/images/weather-result.png)
 
 ## 📦 Como rodar localmente
 
