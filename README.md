@@ -5,6 +5,6 @@
   - Usuário digita o nome da cidade
   - App consulta uma API aberta de clima: OpenWeatherMap
   - Mostra temperatura, descrição e ícone do clima
-  - Responsivo e com layout bonito (Usando TailiwindCSS) 
+  - Responsivo e com layout prático (Usando TailiwindCSS) 
 
 
