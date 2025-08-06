@@ -20,7 +20,10 @@ Aplicação simples em React que permite ao usuário buscar o clima atual de uma
 
 ## 📸 Screenshots
 
+### Tela Principal
 ![Tela Principal](public/images/weather-home.png)
+
+### Tela com resultado
 ![Tela com resultado](public/images/weather-result.png)
 
 ## 📦 Como rodar localmente
