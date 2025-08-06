@@ -1,10 +1,32 @@
-# Aplicativo de Clima com API Externa
+# 🌤️ React Weather App
 
-- Aplicativo tem como objetivo aperfeiçoar minhas habilidades com REACT, fetch, manipulação de estado e componentes.
-- Funcionalidades:
-  - Usuário digita o nome da cidade
-  - App consulta uma API aberta de clima: OpenWeatherMap
-  - Mostra temperatura, descrição e ícone do clima
-  - Responsivo e com layout prático (Usando TailiwindCSS) 
+Aplicação simples em React que permite ao usuário buscar o clima atual de uma cidade, utilizando a API do OpenWeatherMap.
 
+[🔗 Acesse o site ](https://leen-lm.github.io/react-weather-app)
 
+## 🚀 Funcionalidades
+
+- Buscar cidade e exibir temperatura
+- Tradução automática da condição climática (EN → PT)
+- Interface responsiva com Tailwind CSS
+- Dados consumidos da API do OpenWeatherMap
+
+## 🧪 Tecnologias usadas
+
+- React
+- Tailwind CSS
+- OpenWeatherMap API
+- Vite
+
+## 📸 Screenshots
+
+![Tela Principal](https://leen-lm.github.io/react-weather-app/images/weather-home.png)
+![Tela com resultado](https://leen-lm.github.io/react-weather-app/images/weather-result.png)
+
+## 📦 Como rodar localmente
+
+```bash
+git clone https://github.com/Leen-lm/react-weather-app
+cd react-weather-app
+npm install
+npm run dev
