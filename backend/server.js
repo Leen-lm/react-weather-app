@@ -4,7 +4,12 @@ import cors from "cors";
 
 dotenv.config();
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+    origin: 'https://react-weather-app-seven-brown.vercel.app',
+    optionsSuccessStatus: 200
+}
+app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 3000;
 
