@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 
 export function useWeather(city) {
     const [weather, setWeather] = useState(null);
-    const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
     useEffect(() => {
         if (!city) {
@@ -11,7 +10,7 @@ export function useWeather(city) {
         }
         const fetchWeather = async () => {
             try {
-                const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+                const res = await fetch(`https://react-weather-app-vumw.onrender.com/weather?city=${city}`
                 );
                 if (!res.ok) {
                     throw new Error(`Erro HTTP: ${res.status}`);
@@ -25,7 +24,7 @@ export function useWeather(city) {
             };
         };
         fetchWeather();
-    }, [city, apiKey]);
+    }, [city]);
 
     return weather;
 }
