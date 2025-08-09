@@ -8,6 +8,7 @@ const app = express();
 const corsOptions =
     [
         'https://react-weather-app-seven-brown.vercel.app',
+        'https://react-weather-app-git-main-leen-lms-projects.vercel.app',
         'http://localhost:5173'
     ];
 
