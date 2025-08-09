@@ -2,7 +2,7 @@
 
 Aplicação simples em React que permite ao usuário buscar o clima atual de uma cidade, utilizando a API do OpenWeatherMap.
 
-[🔗 Acesse o site ](https://leen-lm.github.io/react-weather-app)
+[🔗 Acesse o site ](https://react-weather-app-seven-brown.vercel.app)
 
 ## 🚀 Funcionalidades
 
