@@ -26,7 +26,7 @@ const PORT = process.env.PORT || 3000;
 
 app.get("/weather", async (req, res) => {
     const { city } = req.query;
-
+    
     if (!city) {
         return res.status(400).json({ error: "Cidade não informada!" });
     }
@@ -36,8 +36,8 @@ app.get("/weather", async (req, res) => {
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
 
         const response = await fetch(apiUrl);
-        const data = response.json();
-
+        const data = await response.json();
+        
         res.json(data);
     } catch (error) {
         res.status(500).json({ error: "Erro ao buscar o clima!" });
