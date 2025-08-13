@@ -19,7 +19,6 @@ export default function WeatherInfo({ weather }) {
     if (!weather) return null;
 
     const temperatura = weather.main.temp;
-    console.log(weather);
     
     return (
         <div className="text-center flex flex-col items-center">
