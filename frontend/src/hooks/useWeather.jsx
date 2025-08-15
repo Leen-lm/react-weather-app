@@ -17,7 +17,6 @@ export function useWeather(city) {
                 }
 
                 const data = await res.json();
-                console.log(data);
                 
                 setWeather(data);
             } catch (error) {
