@@ -22,7 +22,7 @@ export function useWeather(city) {
                 
                 if(data.cod === "404"){
                     setWeather(null);
-                    setError("Cidade inválida. Tente novamente.")
+                    setError("Digite uma cidade válida.")
                 } else {
                     setWeather(data);
                     setError("");
