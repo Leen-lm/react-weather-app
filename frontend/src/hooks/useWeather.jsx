@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
 export function useWeather(city) {
-    const [weather, setWeather] = useState(null);
+    const [ weather, setWeather ] = useState(null);
+    const [ error, setError ] = useState("");
 
     useEffect(() => {
         if (!city) {
@@ -9,6 +10,7 @@ export function useWeather(city) {
             return;
         }
         const fetchWeather = async () => {
+            setError("");
             try {
                 const res = await fetch(`https://react-weather-app-vumw.onrender.com/weather?city=${city}`
                 );
@@ -18,14 +20,20 @@ export function useWeather(city) {
 
                 const data = await res.json();
                 
-                setWeather(data);
-            } catch (error) {
-                console.error('Erro ao buscar o clima', error);
+                if(data.cod === "404"){
+                    setWeather(null);
+                    setError("Cidade inválida. Tente novamente.")
+                } else {
+                    setWeather(data);
+                    setError("");
+                }
+            } catch (err) {
                 setWeather(null);
+                setError("Erro ao buscar dados. Tente novamente mais tarde.", err);
             };
         };
         fetchWeather();
     }, [city]);
 
-    return weather;
+    return { weather, error };
 }
