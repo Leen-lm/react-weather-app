@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 export function useWeather(city) {
     const [ weather, setWeather ] = useState(null);
     const [ error, setError ] = useState("");
+    const [ loading, setLoading ] = useState(false); 
 
     useEffect(() => {
         if (!city) {
@@ -11,6 +12,7 @@ export function useWeather(city) {
         }
         const fetchWeather = async () => {
             setError("");
+            setLoading(true);
             try {
                 const res = await fetch(`https://react-weather-app-vumw.onrender.com/weather?city=${city}`
                 );
@@ -26,6 +28,7 @@ export function useWeather(city) {
                 } else {
                     setWeather(data);
                     setError("");
+                    setLoading(false);
                 }
             } catch (err) {
                 setWeather(null);
@@ -35,5 +38,7 @@ export function useWeather(city) {
         fetchWeather();
     }, [city]);
 
-    return { weather, error };
+    return { weather, error, loading };
 }
+
+// para adicionar um arquivo específico no git add. colocamos 
